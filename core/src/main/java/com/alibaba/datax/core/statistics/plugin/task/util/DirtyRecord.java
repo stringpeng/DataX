@@ -145,11 +145,6 @@ class DirtyColumn extends Column {
 				"该方法不支持!");
 	}
 
-	private DirtyColumn(Object object, Type type, int byteSize, int index) {
-		super(object, type, byteSize);
-		this.setIndex(index);
-	}
-
 	private DirtyColumn(String name, Object object, Type type, int byteSize, int index) {
 		super(name, object, type, byteSize);
 		this.setIndex(index);
