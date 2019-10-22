@@ -383,6 +383,11 @@ public class CommonRdbmsWriter {
                     } catch (SQLException e) {
                         LOG.debug(e.toString());
 
+                        // 循环设置每个字段的名字，用于记录错误日志
+                        for(int i = 0; i < record.getColumnNumber(); i++) {
+                            record.getColumn(i).setRowName(this.resultSetMetaData.getLeft().get(i));
+                        }
+
                         this.taskPluginCollector.collectDirtyRecord(record, e);
                     } finally {
                         // 最后不要忘了关闭 preparedStatement

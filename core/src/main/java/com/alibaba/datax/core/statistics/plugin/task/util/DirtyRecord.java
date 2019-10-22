@@ -83,7 +83,8 @@ class DirtyColumn extends Column {
 	}
 
 	private DirtyColumn(Column column, int index) {
-		this(null == column ? null : column.getRawData(),
+		this(null == column ? null : column.getRowName(),
+				null == column ? null : column.getRawData(),
 				null == column ? Column.Type.NULL : column.getType(),
 				null == column ? 0 : column.getByteSize(), index);
 	}
@@ -146,6 +147,11 @@ class DirtyColumn extends Column {
 
 	private DirtyColumn(Object object, Type type, int byteSize, int index) {
 		super(object, type, byteSize);
+		this.setIndex(index);
+	}
+
+	private DirtyColumn(String name, Object object, Type type, int byteSize, int index) {
+		super(name, object, type, byteSize);
 		this.setIndex(index);
 	}
 }

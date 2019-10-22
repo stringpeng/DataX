@@ -14,6 +14,8 @@ public abstract class Column {
 
 	private Type type;
 
+	private String rowName;
+
 	private Object rawData;
 
 	private int byteSize;
@@ -23,6 +25,15 @@ public abstract class Column {
 		this.type = type;
 		this.byteSize = byteSize;
 	}
+
+	public Column(final String name, final Object object, final Type type, int byteSize) {
+		this.rowName = name;
+		this.rawData = object;
+		this.type = type;
+		this.byteSize = byteSize;
+	}
+
+	public String getRowName() { return rowName; }
 
 	public Object getRawData() {
 		return this.rawData;
@@ -35,6 +46,8 @@ public abstract class Column {
 	public int getByteSize() {
 		return this.byteSize;
 	}
+
+	public void setRowName(String name) { this.rowName = name; }
 
 	protected void setType(Type type) {
 		this.type = type;
