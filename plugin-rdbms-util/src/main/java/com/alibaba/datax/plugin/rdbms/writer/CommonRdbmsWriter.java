@@ -407,6 +407,8 @@ public class CommonRdbmsWriter {
                 throws SQLException {
             for (int i = 0; i < this.columnNumber; i++) {
                 int columnSqltype = this.resultSetMetaData.getMiddle().get(i);
+                // 给数据模型添加字段名称
+                record.getColumn(i).setRowName(this.resultSetMetaData.getLeft().get(i));
                 preparedStatement = fillPreparedStatementColumnType(preparedStatement, i, columnSqltype, record.getColumn(i));
             }
 
