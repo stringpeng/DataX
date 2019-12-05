@@ -1,0 +1,13 @@
+{
+    "name": "sqlserver8reader",
+    "parameter": {
+        "username": "",
+        "password": "",
+        "connection": [
+            {
+                "table": [],
+                "jdbcUrl": []
+            }
+        ]
+    }
+}

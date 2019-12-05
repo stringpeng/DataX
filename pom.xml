@@ -48,6 +48,7 @@
         <module>mysqlreader</module>
         <module>drdsreader</module>
         <module>sqlserverreader</module>
+        <module>sqlserver8reader</module>
         <module>postgresqlreader</module>
         <module>oraclereader</module>
         <!--<module>odpsreader</module>-->
